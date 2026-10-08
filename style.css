@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #e9e9e9;
+    font-family: Arial, sans-serif;
+}
+
+/* Calculator Body */
+.hero {
+    width: 360px;
+    padding: 18px;
+    background: #1c1c1c;
+    border-radius: 28px;
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.25),
+        inset 0 1px 1px rgba(255, 255, 255, 0.08);
+}
+
+/* Display */
+.display {
+    width: 100%;
+    height: 120px;
+    margin-bottom: 18px;
+    padding: 20px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+
+    background: #101010;
+    color: white;
+
+    border-radius: 20px;
+
+    font-size: 42px;
+    font-weight: 500;
+
+    overflow: hidden;
+    white-space: nowrap;
+
+    box-shadow:
+        inset 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* Buttons Container */
+.btn {
+    display: grid;
+
+    /*
+       4 columns
+    */
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 10px;
+}
+
+/* All Buttons */
+button {
+    height: 65px;
+
+    border: none;
+    border-radius: 18px;
+
+    font-size: 22px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.1s ease,
+        filter 0.1s ease,
+        background 0.2s ease;
+}
+
+/* Number Buttons */
+.numbers {
+    background: #333333;
+    color: white;
+}
+
+.numbers:hover {
+    background: #414141;
+}
+
+/* Operators */
+.operator {
+    background: #ff9500;
+    color: white;
+}
+
+.operator:hover {
+    background: #ffad33;
+}
+
+/* AC / C */
+.cls-button {
+    background: #a5a5a5;
+    color: #111;
+}
+
+.cls-button:hover {
+    background: #bcbcbc;
+}
+
+/* Equal Button */
+.equal {
+    background: #ff9500;
+    color: white;
+
+    grid-row: span 2;
+    height: 140px;
+}
+
+.equal:hover {
+    background: #ffad33;
+}
+
+/* Click Effect */
+button:active {
+    transform: scale(0.94);
+    filter: brightness(1.2);
+}
+
+
+/* Mobile */
+@media (max-width: 420px) {
+
+    .hero {
+        width: calc(100% - 24px);
+        padding: 14px;
+        border-radius: 24px;
+    }
+
+    .display {
+        height: 110px;
+        font-size: 36px;
+    }
+
+    button {
+        height: 60px;
+        border-radius: 16px;
+        font-size: 20px;
+    }
+
+    .equal {
+        height: 130px;
+    }
+}
